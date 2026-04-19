@@ -1,1 +1,68 @@
-/* Add styles here */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.1'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.container {
+    text-align: center;
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #1a73e8;
+    margin-bottom: 20px;
+}
+
+#generate {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(26, 115, 232, 0.4);
+}
+
+#generate:hover {
+    background-color: #155ab6;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(26, 115, 232, 0.5);
+}
+
+#numbers {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.number {
+    width: 60px;
+    height: 60px;
+    background-color: #f0f2f5;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
