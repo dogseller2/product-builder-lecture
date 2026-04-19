@@ -1,34 +1,78 @@
 
+:root {
+    --bg-color: #f0f2f5;
+    --container-bg: white;
+    --text-color: #333;
+    --primary-color: #1a73e8;
+    --primary-hover: #155ab6;
+    --number-bg: #f0f2f5;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --button-shadow: rgba(26, 115, 232, 0.4);
+}
+
+.dark-mode {
+    --bg-color: #121212;
+    --container-bg: #1e1e1e;
+    --text-color: #e0e0e0;
+    --primary-color: #bb86fc;
+    --primary-hover: #9965f4;
+    --number-bg: #2d2d2d;
+    --shadow-color: rgba(0, 0, 0, 0.4);
+    --button-shadow: rgba(187, 134, 252, 0.3);
+}
+
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f0f2f5;
-    color: #333;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.1'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+    transition: background-color 0.3s ease, color 0.3s ease;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.05'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 .container {
+    position: relative;
     text-align: center;
-    background-color: white;
+    background-color: var(--container-bg);
     padding: 40px;
     border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 25px var(--shadow-color);
     width: 90%;
     max-width: 500px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#theme-toggle {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 5px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    }
+#theme-toggle:hover {
+    background-color: var(--primary-color);
+    color: var(--container-bg);
 }
 
 h1 {
     font-size: 2.5rem;
-    color: #1a73e8;
+    color: var(--primary-color);
     margin-bottom: 20px;
 }
 
 #generate {
-    background-color: #1a73e8;
+    background-color: var(--primary-color);
     color: white;
     border: none;
     padding: 15px 30px;
@@ -36,13 +80,13 @@ h1 {
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(26, 115, 232, 0.4);
+    box-shadow: 0 4px 15px var(--button-shadow);
 }
 
 #generate:hover {
-    background-color: #155ab6;
+    background-color: var(--primary-hover);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(26, 115, 232, 0.5);
+    box-shadow: 0 6px 20px var(--button-shadow);
 }
 
 #numbers {
@@ -56,13 +100,14 @@ h1 {
 .number {
     width: 60px;
     height: 60px;
-    background-color: #f0f2f5;
+    background-color: var(--number-bg);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
     font-weight: bold;
-    color: #333;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    color: var(--text-color);
+    box-shadow: 0 2px 5px var(--shadow-color);
+    transition: all 0.3s ease;
 }

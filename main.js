@@ -1,4 +1,21 @@
 
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+
+// 테마 초기화
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
+    body.classList.add('dark-mode');
+    themeToggle.textContent = '라이트 모드';
+}
+
+themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    const isDark = body.classList.contains('dark-mode');
+    themeToggle.textContent = isDark ? '라이트 모드' : '다크 모드';
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+});
+
 document.getElementById('generate').addEventListener('click', () => {
     const numbersDiv = document.getElementById('numbers');
     numbersDiv.innerHTML = '';
